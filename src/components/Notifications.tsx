@@ -1,7 +1,7 @@
-import type { AppState, User, View } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User, View } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { Bell, UserPlus, Check, X, MessageCircle, CheckCheck } from "lucide-react";
 
 interface Props {

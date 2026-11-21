@@ -1,10 +1,10 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import type { AppState, User } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Badge } from "../components/ui/badge";
 import {
   Search,
   UserPlus,
@@ -184,7 +184,7 @@ export function Explore({ state, currentUser, onOpenUser, onSendRequest }: Props
                     <button onClick={() => onOpenUser(u.id)} className="mt-3 block text-left text-lg font-semibold hover:underline">
                       {u.name}
                     </button>
-                    <p className="text-xs text-[#0F0F01]/50">@{u.username}</p>
+                    <p className="text-xs text-[#0F0F01]/50">..{u.username}</p>
                     <p className="mt-1 flex items-center gap-1 text-xs text-[#0F0F01]/50">
                       <MapPin className="h-3 w-3" /> {u.location}
                     </p>

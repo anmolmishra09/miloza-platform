@@ -1,8 +1,8 @@
 import { useState } from "react";
-import type { AppState, User } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import { Check, X, UserPlus, Inbox, Send, Clock } from "lucide-react";
 
 interface Props {
@@ -55,7 +55,7 @@ export function Requests({ state, currentUser, onRespond, onCancel, onOpenUser }
                   </button>
                   <div className="min-w-0 flex-1">
                     <button onClick={() => onOpenUser(from.id)} className="text-base font-semibold hover:underline">{from.name}</button>
-                    <p className="text-xs text-[#0F0F01]/50">@{from.username} · {from.location}</p>
+                    <p className="text-xs text-[#0F0F01]/50">..{from.username} · {from.location}</p>
                     <p className="mt-1 line-clamp-1 text-sm text-[#0F0F01]/60">{from.bio}</p>
                     <p className="mt-1 flex items-center gap-1 text-xs text-[#0F0F01]/40">
                       <Clock className="h-3 w-3" /> {timeAgo(r.createdAt)}
@@ -101,7 +101,7 @@ export function Requests({ state, currentUser, onRespond, onCancel, onOpenUser }
                   </button>
                   <div className="min-w-0 flex-1">
                     <button onClick={() => onOpenUser(to.id)} className="text-sm font-semibold hover:underline">{to.name}</button>
-                    <p className="text-xs text-[#0F0F01]/50">@{to.username}</p>
+                    <p className="text-xs text-[#0F0F01]/50">..{to.username}</p>
                     <p className="mt-1 flex items-center gap-1 text-xs text-[#0F0F01]/40">
                       <Clock className="h-3 w-3" /> Sent {timeAgo(r.createdAt)}
                     </p>

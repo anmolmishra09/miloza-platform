@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import type { AppState, User } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+import { Badge } from "../components/ui/badge";
 import { Search, MessageCircle } from "lucide-react";
 
 interface Props {

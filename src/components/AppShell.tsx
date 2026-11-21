@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import type { User, View } from "@/types";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import type { User, View } from "../types";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   LayoutDashboard,
   Compass,
@@ -77,7 +77,7 @@ export function AppShell({ currentUser, view, onNavigate, onLogout, pendingCount
             </div>
             <div className="min-w-0 flex-1">
               <p className="truncate text-sm font-semibold">{currentUser.name}</p>
-              <p className="truncate text-xs text-[#0F0F01]/50">@{currentUser.username}</p>
+              <p className="truncate text-xs text-[#0F0F01]/50">..{currentUser.username}</p>
             </div>
           </div>
           <Button variant="ghost" onClick={onLogout} className="mt-3 w-full justify-start rounded-xl text-[#0F0F01]/70 hover:bg-white">

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { AppState, User } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Textarea } from "../components/ui/textarea";
+import { Switch } from "../components/ui/switch";
+import { Badge } from "../components/ui/badge";
 import { toast } from "sonner";
 import { Save, RotateCcw, LogOut, ShieldCheck, Bell, Lock, Ban, Eye, Trash2, UserCircle } from "lucide-react";
 
@@ -66,7 +66,7 @@ export function Settings({ currentUser, onUpdate, onReset, onLogout, state, onUn
             </div>
             <div>
               <p className="font-semibold">{currentUser.name}</p>
-              <p className="text-sm text-[#0F0F01]/50">@{currentUser.username}</p>
+              <p className="text-sm text-[#0F0F01]/50">..{currentUser.username}</p>
             </div>
           </div>
           <div>

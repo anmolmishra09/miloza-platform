@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import type { AppState, User } from "@/types";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import type { AppState, User } from "../types";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
 import { ArrowLeft, Send, Phone, Video, MoreVertical } from "lucide-react";
 
 interface Props {

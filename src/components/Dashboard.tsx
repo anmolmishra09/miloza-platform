@@ -1,7 +1,7 @@
-import type { AppState, User, View } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import type { AppState, User, View } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
 import {
   UserPlus,
   MessageCircle,
@@ -70,7 +70,7 @@ export function Dashboard({ state, currentUser, onOpenUser, onSendRequest, onOpe
                       </button>
                       <div className="min-w-0 flex-1">
                         <button onClick={() => onOpenUser(u.id)} className="truncate text-sm font-semibold hover:underline">{u.name}</button>
-                        <p className="truncate text-xs text-[#0F0F01]/50">@{u.username}</p>
+                        <p className="truncate text-xs text-[#0F0F01]/50">..{u.username}</p>
                       </div>
                       <Button
                         size="sm"

@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster } from "./components/ui/sonner";
 import { toast } from "sonner";
 
 import type {
@@ -13,27 +13,27 @@ import type {
   Notification,
   User,
   View,
-} from "@/types";
+} from "./types";
 
-import { seedUsers } from "@/lib/seed";
-import { loadState, saveState } from "@/lib/storage";
+import { seedUsers } from "./lib/seed";
+import { loadState, saveState } from "./lib/storage";
 
-import { Landing } from "@/components/Landing";
-import { Features } from "@/components/Features";
-import { HowItWorks } from "@/components/HowItWorks";
-import { Discover } from "@/components/Discover";
-import { Safety } from "@/components/Safety";
-import { FAQ } from "@/components/FAQ";
-import { AuthScreen } from "@/components/AuthScreen";
-import { AppShell } from "@/components/AppShell";
-import { Dashboard } from "@/components/Dashboard";
-import { Explore } from "@/components/Explore";
-import { Requests } from "@/components/Requests";
-import { Messages } from "@/components/Messages";
-import { ChatView } from "@/components/ChatView";
-import { ProfileView } from "@/components/ProfileView";
-import { Notifications } from "@/components/Notifications";
-import { Settings } from "@/components/Settings";
+import { Landing } from "./components/Landing";
+import { Features } from "./components/Features";
+import { HowItWorks } from "./components/HowItWorks";
+import { Discover } from "./components/Discover";
+import { Safety } from "./components/Safety";
+import { FAQ } from "./components/FAQ";
+import { AuthScreen } from "./components/AuthScreen";
+import { AppShell } from "./components/AppShell";
+import { Dashboard } from "./components/Dashboard";
+import { Explore } from "./components/Explore";
+import { Requests } from "./components/Requests";
+import { Messages } from "./components/Messages";
+import { ChatView } from "./components/ChatView";
+import { ProfileView } from "./components/ProfileView";
+import { Notifications } from "./components/Notifications";
+import { Settings } from "./components/Settings";
 
 function AppContent() {
   const navigate = useNavigate();

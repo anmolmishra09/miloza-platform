@@ -1,9 +1,9 @@
 import { useState } from "react";
-import type { AppState, User } from "@/types";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
+import type { AppState, User } from "../types";
+import { Card, CardContent } from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Badge } from "../components/ui/badge";
+import { Textarea } from "../components/ui/textarea";
 import {
   ArrowLeft,
   MapPin,
@@ -169,7 +169,7 @@ export function ProfileView({
               </Badge>
             )}
           </div>
-          <p className="text-sm text-[#0F0F01]/50">@{user.username}</p>
+          <p className="text-sm text-[#0F0F01]/50">..{user.username}</p>
 
           <p className="mt-4 text-sm text-[#0F0F01]/70">{user.bio}</p>
 
