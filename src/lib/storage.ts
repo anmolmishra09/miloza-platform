@@ -1,16 +1,13 @@
-
-import type { AppState } from "@/types";
-import { seedUsers } from "@/lib/seed";
+import type { AppState } from "../types";
+import { seedUsers } from "./seed";
 
 const KEY = "vybora_state_v2";
 
 export function loadState(): AppState {
   try {
     const raw = localStorage.getItem(KEY);
-
     if (raw) {
       const parsed = JSON.parse(raw) as AppState;
-
       if (parsed && Array.isArray(parsed.users) && parsed.users.length) {
         return {
           ...parsed,
@@ -23,7 +20,6 @@ export function loadState(): AppState {
   } catch {
     // ignore
   }
-
   return {
     users: seedUsers(),
     currentUserId: null,

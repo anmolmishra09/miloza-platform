@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Label } from "../components/ui/label";
+import { Checkbox } from "../components/ui/checkbox";
+import { Card, CardContent } from "../components/ui/card";
 import { Sparkles, Eye, EyeOff, ArrowLeft, Check, X, Loader2 } from "lucide-react";
 
 interface Props {
@@ -27,7 +27,7 @@ export function AuthScreen({ onRegister, onLogin, onBack }: Props) {
   const strength = strengthOf(password);
   const usernameOk = username.length >= 3 && /^[a-z0-9_]+$/i.test(username);
   const passwordsMatch = password.length > 0 && password === confirm;
-  const canRegister = name.trim() && usernameOk && email.includes("@") && password.length >= 6 && passwordsMatch && terms;
+  const canRegister = name.trim() && usernameOk && email.includes("..") && password.length >= 6 && passwordsMatch && terms;
   const canLogin = email.trim() && password.length > 0;
 
   const submit = () => {
@@ -130,7 +130,7 @@ export function AuthScreen({ onRegister, onLogin, onBack }: Props) {
                   id="a-email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={mode === "register" ? "you@example.com" : "mayac or you@example.com"}
+                  placeholder={mode === "register" ? "you..example.com" : "mayac or you..example.com"}
                   className="mt-1.5 rounded-xl"
                 />
               </div>
