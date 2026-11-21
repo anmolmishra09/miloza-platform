@@ -1,0 +1,89 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+enum UserRole {
+  USER
+  ADMIN
+}
+
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+  SUSPENDED
+}
+
+model User {
+  id           Int        @id @default(autoincrement())
+  email        String     @unique @db.VarChar(191)
+  passwordHash String     @map("password_hash") @db.VarChar(255)
+  role         UserRole   @default(USER)
+  status       UserStatus @default(ACTIVE)
+
+  profile      UserProfile?
+  userSessions UserSession[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+model UserProfile {
+  id          Int       @id @default(autoincrement())
+  userId      Int       @unique @map("user_id")
+
+  firstName   String?   @map("first_name") @db.VarChar(100)
+  lastName    String?   @map("last_name") @db.VarChar(100)
+  username    String?   @unique @db.VarChar(50)
+
+  phone       String?   @db.VarChar(20)
+  bio         String?   @db.VarChar(500)
+  avatar      String?   @db.VarChar(500)
+
+  dateOfBirth DateTime? @map("date_of_birth") @db.Date
+  gender      String?   @db.VarChar(30)
+
+  address     String?   @db.VarChar(255)
+  city        String?   @db.VarChar(100)
+  state       String?   @db.VarChar(100)
+  country     String?   @db.VarChar(100)
+  postalCode  String?   @map("postal_code") @db.VarChar(20)
+
+  user User @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("user_profiles")
+}
+
+model UserSession {
+  id               Int       @id @default(autoincrement())
+  userId           Int       @map("user_id")
+  refreshTokenHash String    @unique @map("refresh_token_hash") @db.VarChar(64)
+  expiresAt        DateTime  @map("expires_at")
+  revokedAt        DateTime? @map("revoked_at")
+  createdAt        DateTime  @default(now()) @map("created_at")
+
+  user User @relation(
+    fields: [userId],
+    references: [id],
+    onDelete: Cascade
+  )
+
+  @@index([userId])
+  @@index([expiresAt])
+  @@map("user_sessions")
+}
